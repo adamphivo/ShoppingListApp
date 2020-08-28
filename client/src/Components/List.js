@@ -129,8 +129,8 @@ export default class List extends React.Component {
                         </button>
                     </form>
                 </div>
-                <h2 className="text-lg mt-8 text-center underline">List</h2>
-                <table className="table-auto w-5/6 mx-auto" id="items">
+                <h2 className="text-lg mt-16 text-center underline">List</h2>
+                <table className="mt-8 table-auto w-5/6 mx-auto" id="items">
                         <thead>
                             <tr>
                                 <td className="font-bold px-4 py-2 text-center">Product</td>
