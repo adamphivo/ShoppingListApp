@@ -9,7 +9,6 @@ let Item = require('./item.model');
 
 // Private ENV Setup
 dotenv.config();
-const PORT = process.env.PORT;
 const DBURL = process.env.DBURL;
 
 // Express Setup
@@ -99,6 +98,6 @@ router.route("/update/:id").post(function(req,res){
 // Wrapping
 
 app.use("/items", router);
-app.listen(PORT, function() {
-    console.log("Server is running on Port: " + PORT);
-});
+app.listen(process.env.PORT || 5000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
