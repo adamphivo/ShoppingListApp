@@ -115,7 +115,7 @@ export default class List extends React.Component {
                         </tbody>
                 </table>
                 <div className="w-5/6  mx-auto mt-12">
-                <h3 className="w-3/6 mx-auto text-center underline mb-4">Add Item</h3>
+                    <h3 className="w-3/6 mx-auto text-center underline mb-4">Add Item</h3>
                     <form onSubmit={this.handleSubmit}>
                         <label className="w-3/7 text-center font-bold pr-4 block">
                             Product :
