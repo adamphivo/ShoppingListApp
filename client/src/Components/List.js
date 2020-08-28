@@ -5,8 +5,8 @@ export default class List extends React.Component {
     // Init empy state to receive data
     state = {
         items: [],
-        name: '',
-        number: 0,
+        name: 'Bananas',
+        amount: 0,
     }
 
     // Get data
@@ -32,7 +32,7 @@ export default class List extends React.Component {
         const item = {
             name: this.state.name,
             amount: this.state.amount,
-            isDone: '❌',
+            isDone: 'No',
         };
 
         axios.post('http://localhost:5000/items/add', item)
@@ -99,8 +99,38 @@ export default class List extends React.Component {
 
     render(){
         return(
-            <div className="w-full mx-auto mt-8 font-mono">
-                <h2 className="text-center underline">List</h2>
+            <div className="mb-24 w-full mx-auto mt-4 font-mono">
+                    <div className="w-5/6  mx-auto mt-0">
+                    <h3 className="text-lg w-3/6 mx-auto text-center underline mb-4">Add Item</h3>
+                    <form onSubmit={this.handleSubmit}>
+                        <label className="w-3/7 text-center font-bold pr-4 block">
+                            Product :
+                            <input className="appearance-none p-2 border-2 bg-gray-200 rounded mb-1 pr-4 ml-2" 
+                            type="text" name="name" 
+                            onChange={this.handleNameChange}
+                            placeholder="Bananas"
+                            >
+                            </input>
+                        </label>
+                        <label className="w-3/7 text-center font-bold pr-4 block">
+                            Amount :
+                            <input 
+                                className="appearance-none p-2 border-2 bg-gray-200 rounded mb-1 pr-4 ml-2" 
+                                type="number" 
+                                name="amount" 
+                                onChange={this.handleAmountChange}
+                                placeholder='0'
+                            >
+                            </input>
+                        </label>
+                        <button 
+                            className="mt-4 w-1/6 mx-auto block py-2 px-4 rounded bg-blue-300 hover:bg-blue-400 shadow" 
+                            type="submit">
+                                <span role="img" aria-label="add cross">➕</span>
+                        </button>
+                    </form>
+                </div>
+                <h2 className="text-lg mt-8 text-center underline">List</h2>
                 <table className="table-auto w-5/6 mx-auto" id="items">
                         <thead>
                             <tr>
@@ -114,24 +144,6 @@ export default class List extends React.Component {
                             {this.renderTableData()}
                         </tbody>
                 </table>
-                <div className="w-5/6  mx-auto mt-12">
-                    <h3 className="w-3/6 mx-auto text-center underline mb-4">Add Item</h3>
-                    <form onSubmit={this.handleSubmit}>
-                        <label className="w-3/7 text-center font-bold pr-4 block">
-                            Product :
-                            <input className="appearance-none p-2 border-2 bg-gray-200 rounded mb-1 pr-4 ml-2" type="text" name="name" onChange={this.handleNameChange}></input>
-                        </label>
-                        <label className="w-3/7 text-center font-bold pr-4 block">
-                            Amount :
-                            <input className="appearance-none p-2 border-2 bg-gray-200 rounded mb-1 pr-4 ml-2" type="number" name="amount" onChange={this.handleAmountChange}></input>
-                        </label>
-                        <button 
-                            className="mt-4 w-1/6 mx-auto block py-2 px-4 rounded bg-blue-300 hover:bg-blue-400 shadow" 
-                            type="submit">
-                                <span role="img" aria-label="add cross">➕</span>
-                        </button>
-                    </form>
-                </div>
             </div>
         )
     }
