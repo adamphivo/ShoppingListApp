@@ -94,9 +94,6 @@ export default class List extends React.Component {
         })
     }
 
-
-
-
     render(){
         return(
             <div className="mb-24 w-full mx-auto mt-4 font-mono">
@@ -126,7 +123,9 @@ export default class List extends React.Component {
                         <button 
                             className="mt-4 w-1/6 mx-auto block py-2 px-4 rounded bg-blue-300 hover:bg-blue-400 shadow" 
                             type="submit">
-                                <span role="img" aria-label="add cross">➕</span>
+                                <span role="img" aria-label="add cross">
+                                ➕
+                                </span>
                         </button>
                     </form>
                 </div>
