@@ -1,0 +1,1 @@
+mongodb+srv://dbUser:<Poissonrouge1$>@shoppinglisttest.sm8re.gcp.mongodb.net/<shoppinglist>?retryWrites=true&w=majority
